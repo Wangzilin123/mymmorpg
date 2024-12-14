@@ -289,6 +289,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>E:/mymmorpg/Src/MyClient/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>E:/mymmorpg/Src/MyClient/Assets/JsonDotNet/Assemblies/Standalone 1/Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Common">
       <HintPath>E:/mymmorpg/Src/MyClient/Assets/References/Common.dll</HintPath>
     </Reference>
@@ -306,9 +309,6 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/王梓霖/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>E:/mymmorpg/Src/MyClient/Assets/JsonDotNet/Assemblies/Standalone 1/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>E:/unity/2018.2.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
