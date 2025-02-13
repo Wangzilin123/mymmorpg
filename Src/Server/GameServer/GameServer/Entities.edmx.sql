@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/12/2024 19:55:00
--- Generated from EDMX file: E:\mymmorpg\Src\Server\GameServer\GameServer\Entities.edmx
+-- Date Created: 02/13/2025 19:11:34
+-- Generated from EDMX file: E:\mymorpg\Src\Server\GameServer\GameServer\Entities.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -36,6 +36,9 @@ IF OBJECT_ID(N'[dbo].[Players]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Characters]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Characters];
+GO
+IF OBJECT_ID(N'[dbo].[TCharItems]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TCharItems];
 GO
 
 -- --------------------------------------------------

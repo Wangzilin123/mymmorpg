@@ -21,6 +21,8 @@ namespace GameServer
         public bool Init()
         {
             DBService.Instance.Init();
+            //var a = DBService.Instance.Entities.Characters.Where(s=>s.TID==1);
+            //Console.WriteLine("wuhu,{0}",a.FirstOrDefault<TCharacter>().Name);
             thread = new Thread(new ThreadStart(this.Update));
 
             return true;
