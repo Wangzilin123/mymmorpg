@@ -122,6 +122,7 @@ message NetMessageRequest{
 
 	//***homework
 	FirstTestRequest firstRequest=10;
+	HomeworkRequest	homeworkRequest=11;
 }
 
 message NetMessageResponse{
@@ -143,6 +144,10 @@ message NetMessageResponse{
 //***homework
 message FirstTestRequest {
 	string helloworld = 1;
+}
+
+message HomeworkRequest {
+	string homework = 1;
 }
 
 message UserLoginRequest {

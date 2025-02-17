@@ -176,6 +176,9 @@ namespace SkillBridge.Message
         [global::ProtoBuf.ProtoMember(10)]
         public FirstTestRequest firstRequest { get; set; }
 
+        [global::ProtoBuf.ProtoMember(11)]
+        public HomeworkRequest homeworkRequest { get; set; }
+
     }
 
     [global::ProtoBuf.ProtoContract()]
@@ -221,6 +224,19 @@ namespace SkillBridge.Message
         [global::ProtoBuf.ProtoMember(1, Name = @"helloworld")]
         [global::System.ComponentModel.DefaultValue("")]
         public string Helloworld { get; set; } = "";
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class HomeworkRequest : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1, Name = @"homework")]
+        [global::System.ComponentModel.DefaultValue("")]
+        public string Homework { get; set; } = "";
 
     }
 
