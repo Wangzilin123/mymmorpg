@@ -45,6 +45,7 @@ public class LoadingManager : MonoBehaviour {
         {
             i += Random.Range(0.2f, 2.5f);
             progressBar.value = i;
+            progressText.text = ((int)i).ToString() + "%";
             yield return new WaitForEndOfFrame();
         }
         yield return new WaitForSeconds(0.3f);
