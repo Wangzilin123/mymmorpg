@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using SkillBridge.Message;
+using Services;
 
 public class UILogin : MonoBehaviour {
 
@@ -14,6 +16,7 @@ public class UILogin : MonoBehaviour {
     // Use this for initialization
     void Start () {
         RegisterPanel.SetActive(false);
+        UserService.Instance.OnLogin = OnLogin;
     }
 
     private void OnEnable()
@@ -37,7 +40,27 @@ public class UILogin : MonoBehaviour {
     }
     public void OnClickLogin()
     {
-
+        if (string.IsNullOrEmpty(this.username.text))
+        {
+            MessageBox.Show("请输出账号");
+            return;
+        }
+        if (string.IsNullOrEmpty(this.password.text))
+        {
+            MessageBox.Show("请输出密码");
+            return;
+        }
+        UserService.Instance.SendLogin(this.username.text,this.password.text);
     }
-
+    void OnLogin(Result result,string message)
+    {
+        if (result==Result.Success)
+        {
+            SceneManager.Instance.LoadScene("CharSelect");
+        }
+        else
+        {
+            MessageBox.Show(message,"错误",MessageBoxType.Error);
+        }
+    }
 }

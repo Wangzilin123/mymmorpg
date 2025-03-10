@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIRegister : MonoBehaviour {
+public class UIRegister : MonoBehaviour
+{
 
     public InputField username;
     public InputField password;
