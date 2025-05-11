@@ -1,17 +1,17 @@
-2025-03-10 18:45:16,813 [ 1] INFO  Unity: LoadingManager start
-2025-03-10 18:45:19,970 [ 1] INFO  Unity: DataManager > DataManager()
-2025-03-10 18:46:03,092 [ 1] INFO  Unity: UserLoginRequest::user :wuhu psw:6666
-2025-03-10 18:46:03,093 [ 1] INFO  Unity: ConnectToServer() Start 
-2025-03-10 18:46:03,095 [ 1] INFO  Unity: DoConnect
-2025-03-10 18:46:03,096 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
-2025-03-10 18:46:03,099 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
+2025-05-12 01:28:11,830 [ 1] INFO  Unity: LoadingManager start
+2025-05-12 01:28:14,960 [ 1] INFO  Unity: DataManager > DataManager()
+2025-05-12 01:28:22,964 [ 1] INFO  Unity: UserLoginRequest::user :123 psw:123
+2025-05-12 01:28:22,965 [ 1] INFO  Unity: ConnectToServer() Start 
+2025-05-12 01:28:22,969 [ 1] INFO  Unity: DoConnect
+2025-05-12 01:28:22,970 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
+2025-05-12 01:28:22,977 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
 
-2025-03-10 18:46:03,102 [ 1] INFO  Unity: LoadingMesager::OnGameServerConnect :0 reason:Success
-2025-03-10 18:46:03,712 [ 1] INFO  Unity: OnLogin:Success [None]
-2025-03-10 18:46:03,714 [ 1] INFO  Unity: LoadLevel: CharSelect
-2025-03-10 18:46:03,763 [ 1] INFO  Unity: LevelLoadCompleted:1
-2025-03-10 18:46:05,527 [ 1] INFO  Unity: OnDestroy NetworkManager.
-2025-03-10 18:46:05,528 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+2025-05-12 01:28:22,982 [ 1] INFO  Unity: LoadingMesager::OnGameServerConnect :0 reason:Success
+2025-05-12 01:28:25,311 [ 1] INFO  Unity: OnLogin:Success [None]
+2025-05-12 01:28:25,312 [ 1] INFO  Unity: LoadLevel: CharSelect
+2025-05-12 01:28:25,334 [ 1] INFO  Unity: LevelLoadCompleted:1
+2025-05-12 01:28:26,112 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2025-05-12 01:28:26,114 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
 UnityEngine.Debug:LogWarning(Object)
 Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
 Network.NetClient:OnDestroy() (at Assets/Scripts/Network/NetClient.cs:175)
