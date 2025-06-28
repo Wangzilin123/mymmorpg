@@ -21,11 +21,11 @@ public class UICharacterSelect : MonoBehaviour
 
     public List<GameObject> uiChars = new List<GameObject>();
 
-    //public Image[] titles;
+    public Image[] titles;
 
-    //public TMP_Text descs;
+    public TMP_Text descs;
 
-    //public TMP_Text[] names;
+    public TMP_Text[] names;
 
     private int selectCharacterIdx = -1;
 
@@ -35,10 +35,16 @@ public class UICharacterSelect : MonoBehaviour
     [SerializeField] private Button wizaedBtn;
     [SerializeField] private Button archerBtn;
 
+    [SerializeField] private List<GameObject> icons;
 
     void Start()
     {
+        //**
+        DataManager.Instance.Load();
+        DataManager.Instance.LoadData();
+        //***
         InitCharacterSelect(true);
+        showIcon();
         //UserService.Instance.OnCharacterCreate = OnCharacterCreate;
     }
     private void OnEnable()
@@ -112,14 +118,15 @@ public class UICharacterSelect : MonoBehaviour
         this.charClass = (CharacterClass)charClass;
 
         characterView.CurrentCharacter = charClass - 1;
+        showIcon();
 
-        //for (int i = 0; i < 3; i++)
-        //{
-        //    titles[i].gameObject.SetActive(i == charClass - 1);
-        //    names[i].text = DataManager.Instance.Characters[i + 1].Name;
-        //}
+        for (int i = 0; i < 3; i++)
+        {
+            titles[i].gameObject.SetActive(i == charClass - 1);
+            names[i].text = DataManager.Instance.Characters[i + 1].Name;
+        }
 
-        //descs.text = DataManager.Instance.Characters[charClass].Description;
+        descs.text = DataManager.Instance.Characters[charClass].Description;
     }
 
     void OnCharacterCreate(Result result, string message)
@@ -153,6 +160,19 @@ public class UICharacterSelect : MonoBehaviour
         if (selectCharacterIdx >= 0)
         {
             MessageBox.Show("进入游戏","进入游戏",MessageBoxType.Confirm);
+        }
+    }
+
+    void showIcon()
+    {
+        descs.text = DataManager.Instance.Characters[1].Description;
+        for (int i = 0; i < icons.Count; i++)
+        {
+            icons[i].SetActive(i== characterView.CurrentCharacter);
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            titles[i].gameObject.SetActive(i == characterView.CurrentCharacter);
         }
     }
 
