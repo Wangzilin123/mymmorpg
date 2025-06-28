@@ -17,8 +17,9 @@ public class UICharacterView : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-		
-	}
+        UpdateCharacter();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

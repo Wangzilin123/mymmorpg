@@ -1,17 +1,22 @@
-2025-06-20 00:13:32,768 [ 1] INFO  Unity: LoadingManager start
-2025-06-20 00:13:35,875 [ 1] INFO  Unity: DataManager > DataManager()
-2025-06-20 00:13:48,017 [ 1] INFO  Unity: UserLoginRequest::user :123 psw:123
-2025-06-20 00:13:48,019 [ 1] INFO  Unity: ConnectToServer() Start 
-2025-06-20 00:13:48,026 [ 1] INFO  Unity: DoConnect
-2025-06-20 00:13:48,028 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
-2025-06-20 00:13:48,036 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
+2025-06-26 23:25:23,129 [ 1] INFO  Unity: LoadingManager start
+2025-06-26 23:25:26,204 [ 1] INFO  Unity: DataManager > DataManager()
+2025-06-26 23:25:36,117 [ 1] INFO  Unity: UserLoginRequest::user :123 psw:123
+2025-06-26 23:25:36,118 [ 1] INFO  Unity: ConnectToServer() Start 
+2025-06-26 23:25:36,119 [ 1] INFO  Unity: DoConnect
+2025-06-26 23:25:36,121 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
+2025-06-26 23:25:36,123 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
 
-2025-06-20 00:13:48,041 [ 1] INFO  Unity: LoadingMesager::OnGameServerConnect :0 reason:Success
-2025-06-20 00:13:50,446 [ 1] INFO  Unity: OnLogin:Success [None]
-2025-06-20 00:13:50,447 [ 1] INFO  Unity: LoadLevel: CharSelect
-2025-06-20 00:13:50,485 [ 1] INFO  Unity: LevelLoadCompleted:1
-2025-06-20 00:13:53,767 [ 1] INFO  Unity: OnDestroy NetworkManager.
-2025-06-20 00:13:53,768 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+2025-06-26 23:25:36,126 [ 1] INFO  Unity: LoadingMesager::OnGameServerConnect :0 reason:Success
+2025-06-26 23:25:38,410 [ 1] INFO  Unity: OnLogin:Success [None]
+2025-06-26 23:25:38,411 [ 1] INFO  Unity: LoadLevel: CharSelect
+2025-06-26 23:25:38,675 [ 1] INFO  Unity: LevelLoadCompleted:1
+2025-06-26 23:25:38,677 [ 1] FATAL Unity: <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>{0
+{1}</format><args>{UnassignedReferenceException: The variable panelCreate of UICharacterSelect has not been assigned.
+You probably need to assign the panelCreate variable of the UICharacterSelect script in the inspector., UICharacterSelect.InitCharacterSelect (Boolean init) (at Assets/Scripts/UI/UICharacterSelect.cs:35)
+UICharacterSelect.Start () (at Assets/Scripts/UI/UICharacterSelect.cs:29)
+}</args></log4net.Error>
+2025-06-26 23:26:10,230 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2025-06-26 23:26:10,231 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
 UnityEngine.Debug:LogWarning(Object)
 Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
 Network.NetClient:OnDestroy() (at Assets/Scripts/Network/NetClient.cs:175)
