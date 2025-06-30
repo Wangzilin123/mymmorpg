@@ -37,6 +37,7 @@ public class UICharacterSelect : MonoBehaviour
 
     [SerializeField] private List<GameObject> icons;
 
+    [SerializeField] private Button startGameBtn;
     void Start()
     {
         //**
@@ -45,19 +46,21 @@ public class UICharacterSelect : MonoBehaviour
         //***
         InitCharacterSelect(true);
         showIcon();
-        //UserService.Instance.OnCharacterCreate = OnCharacterCreate;
+        UserService.Instance.OnCharacterCreate = OnCharacterCreate;
     }
     private void OnEnable()
     {
         soliderBtn.onClick.AddListener(()=>OnSelectClass(1));
         wizaedBtn.onClick.AddListener(()=>OnSelectClass(2));
         archerBtn.onClick.AddListener(() => OnSelectClass(3));
+        startGameBtn.onClick.AddListener(OnClickCreate);
     }
     private void OnDisable()
     {
         soliderBtn.onClick.RemoveListener(() => OnSelectClass(1));
         wizaedBtn.onClick.RemoveListener(() => OnSelectClass(2));
         archerBtn.onClick.RemoveListener(() => OnSelectClass(3));
+        startGameBtn.onClick.RemoveListener(OnClickCreate);
     }
     public void InitCharacterSelect(bool init)
     {
@@ -71,7 +74,7 @@ public class UICharacterSelect : MonoBehaviour
                 Destroy(old);
             }
             uiChars.Clear();
-            /*
+            
             for (int i = 0; i < User.Instance.Info.Player.Characters.Count; i++)
             {
 
@@ -87,7 +90,7 @@ public class UICharacterSelect : MonoBehaviour
 
                 uiChars.Add(go);
                 go.SetActive(true);
-            }*/
+            }
         }
     }
 
@@ -105,12 +108,12 @@ public class UICharacterSelect : MonoBehaviour
 
     public void OnClickCreate()
     {
-        //if (string.IsNullOrEmpty(this.charName.text))
-        //{
-        //    MessageBox.Show("请输入角色名称");
-        //    return;
-        //}
-        //UserService.Instance.SendCharacterCreate(this.charName.text, this.charClass);
+        if (string.IsNullOrEmpty(this.charName.text))
+        {
+            MessageBox.Show("请输入角色名称");
+            return;
+        }
+        UserService.Instance.SendCharacterCreate(this.charName.text, this.charClass);
     }
 
     public void OnSelectClass(int charClass)
@@ -134,7 +137,6 @@ public class UICharacterSelect : MonoBehaviour
         if (result == Result.Success)
         {
             InitCharacterSelect(true);
-
         }
         else
             MessageBox.Show(message, "错误", MessageBoxType.Error);
