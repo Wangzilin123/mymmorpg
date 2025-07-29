@@ -1,0 +1,4 @@
+Sql连接字符串
+家庭电脑本地连接：Data Source=DESKTOP-I3NG2D0\MMORPG;Integrated Security=SSPI;Initial Catalog=ExtremeWorld;
+公司电脑本地连接：Data Source=WIN-82SF4D4IKR2\MMORPG;Integrated Security=SSPI;Initial Catalog=ExtremeWorld;
+远程连接：Data Source=DESKTOP-I3NG2D0\MMORPG;initial catalog=ExtremeWorld;persist security info=True;user id=mmo;password=Mmo2018#;MultipleActiveResultSets=True;
