@@ -27,7 +27,7 @@ public class UICharacterSelect : MonoBehaviour
     }
     private void OnEnable()
     {
-        InitCharacterSelect(true);
+        CheckSelectOrCreat();
         createBtn.onClick.AddListener(ShowCreatePanel);
         playGameBtn.onClick.AddListener(OnClickPlay);
     }
@@ -99,5 +99,19 @@ public class UICharacterSelect : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         panelCreate.SetActive(true);
+    }
+
+    void CheckSelectOrCreat()
+    {
+        if (User.Instance.Info.Player.Characters.Count>0)
+        {
+            InitCharacterSelect(true);
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
+            panelCreate.SetActive(true);
+        }
+
     }
 }

@@ -66,6 +66,10 @@ public class UICharacterCreate : MonoBehaviour
             return;
         }
         UserService.Instance.SendCharacterCreate(this.charName.text, this.charClass);
+        if (selectCharacterIdx >= 0)
+        {
+            UserService.Instance.SendGameEnter(selectCharacterIdx);
+        }
     }
 
     public void OnSelectClass(int charClass)

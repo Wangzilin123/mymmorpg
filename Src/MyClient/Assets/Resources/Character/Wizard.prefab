@@ -2036,7 +2036,7 @@ Animator:
   m_GameObject: {fileID: 5707583862663099947}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 45453bc40a458b14197fc253d99c8f29, type: 3}
-  m_Controller: {fileID: 9100000, guid: 10470f4fcc18405439cbbb1b92dc8a27, type: 2}
+  m_Controller: {fileID: 9100000, guid: a149e0294082bb948a9b133df36a6ebd, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2287,6 +2287,8 @@ GameObject:
   - component: {fileID: 31575178941296498}
   - component: {fileID: 7217102643719768103}
   - component: {fileID: 5088316914255270961}
+  - component: {fileID: 6245189377754662057}
+  - component: {fileID: 781906304066762312}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -2335,7 +2337,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &5088316914255270961
 CapsuleCollider:
@@ -2360,6 +2362,45 @@ CapsuleCollider:
   m_Height: 1.9973166
   m_Direction: 1
   m_Center: {x: 0, y: 0.9799799, z: 0}
+--- !u!114 &6245189377754662057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089286963407097363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01efb0657c8316247a49c495723f048c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 3824527730050949970}
+  rb: {fileID: 7217102643719768103}
+  position: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 0, y: 0, z: 0}
+  speed: 0
+  animSpeed: 1.5
+  jumpPower: 3
+  isPlayer: 0
+--- !u!114 &781906304066762312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089286963407097363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f58db2e8a2a76d4895d91b4f3e1c9a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 7217102643719768103}
+  rotateSpeed: 2
+  trunAngle: 10
+  speed: 0
+  entityController: {fileID: 0}
+  onAir: 0
 --- !u!1 &7203558763603038860
 GameObject:
   m_ObjectHideFlags: 0

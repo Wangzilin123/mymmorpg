@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace Services
 {
-    class MapService : Singleton<UserService>, IDisposable
+    class MapService : Singleton<MapService>, IDisposable
     {
         public MapService()
         {

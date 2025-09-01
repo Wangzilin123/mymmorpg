@@ -332,7 +332,7 @@ Animator:
   m_GameObject: {fileID: 872029403738683980}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 11c750bef65f5cb4a863267c96763757, type: 3}
-  m_Controller: {fileID: 9100000, guid: 24a42dd6c82ac62419dbda22801a00bd, type: 2}
+  m_Controller: {fileID: 9100000, guid: d480eb8963a02ee408a401519d362fd8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1351,6 +1351,8 @@ GameObject:
   - component: {fileID: 8236034508951262065}
   - component: {fileID: 8265041979985571433}
   - component: {fileID: 7833926758043560149}
+  - component: {fileID: 1987053132906586742}
+  - component: {fileID: 196530728486128457}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -1399,7 +1401,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &7833926758043560149
 CapsuleCollider:
@@ -1424,6 +1426,45 @@ CapsuleCollider:
   m_Height: 1.9947635
   m_Direction: 1
   m_Center: {x: 0, y: 0.9772424, z: 0}
+--- !u!114 &1987053132906586742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846451163793858110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01efb0657c8316247a49c495723f048c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 8700803653493943251}
+  rb: {fileID: 8265041979985571433}
+  position: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 0, y: 0, z: 0}
+  speed: 0
+  animSpeed: 1.5
+  jumpPower: 3
+  isPlayer: 0
+--- !u!114 &196530728486128457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846451163793858110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f58db2e8a2a76d4895d91b4f3e1c9a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 8265041979985571433}
+  rotateSpeed: 2
+  trunAngle: 10
+  speed: 0
+  entityController: {fileID: 0}
+  onAir: 0
 --- !u!1 &4870723334887041799
 GameObject:
   m_ObjectHideFlags: 0
