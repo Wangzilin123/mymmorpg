@@ -1,14 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-using Entities;
+﻿using Entities;
+using Manager;
+using Models;
+using Newtonsoft.Json.Linq;
 using Services;
 using SkillBridge.Message;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+using UnityEngine;
 
 public class GameObjectManager : MonoBehaviour
 {
-
+    public event Action OnValueInit = delegate { };
     Dictionary<int, GameObject> Characters = new Dictionary<int, GameObject>();
     // Use this for initialization
     void Start()
@@ -46,7 +50,7 @@ public class GameObjectManager : MonoBehaviour
     {
         if (!Characters.ContainsKey(character.Info.Id) || Characters[character.Info.Id] == null)
         {
-            Object obj = Resloader.Load<Object>(character.Define.Resource);
+            UnityEngine.Object obj = Resloader.Load<UnityEngine.Object>(character.Define.Resource);
             if(obj == null)
             {
                 Debug.LogErrorFormat("Character[{0}] Resource[{1}] not existed.",character.Define.TID, character.Define.Resource);
@@ -71,6 +75,7 @@ public class GameObjectManager : MonoBehaviour
             {
                 if (character.Info.Id == Models.User.Instance.CurrentCharacter.Id)
                 {
+                    User.Instance.CurrentCharacterObject = go;
                     MainPlayerCamera.Instance.player = go;
                     pc.enabled = true;
                     pc.character = character;
