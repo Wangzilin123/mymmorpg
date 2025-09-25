@@ -207,8 +207,13 @@ namespace Services
 
             if (response.Result==Result.Success)
             {
-                Models.User.Instance.Info.Player.Characters.Clear();
+                //Models.User.Instance.Info.Player.Characters.Clear();
                 Models.User.Instance.Info.Player.Characters.AddRange(response.Characters);
+                if (response.Characters!=null)
+                {
+                    Debug.Log("is not null,and this num is:"+ response.Characters.Count);
+                }
+                Debug.Log("Add cha later Num of Cha:"+ User.Instance.Info.Player.Characters.Count);
 
             }
             if (this.OnCharacterCreate!=null)

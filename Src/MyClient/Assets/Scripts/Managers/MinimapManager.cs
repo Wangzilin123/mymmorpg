@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Manager
+namespace Managers
 {
     class MinimapManager : Singleton<MinimapManager>
     {

@@ -20,7 +20,7 @@ public class UICharacterCreate : MonoBehaviour
 
     public TMP_Text[] names;
 
-    private int selectCharacterIdx = -1;
+    private int selectCharacterIdx = 1;
 
     public UICharacterView characterView;
 
@@ -34,6 +34,7 @@ public class UICharacterCreate : MonoBehaviour
     void Start()
     {
         showIcon();
+        OnSelectClass(1);
         UserService.Instance.OnCharacterCreate = OnCharacterCreate;
     }
     private void OnEnable()
@@ -66,15 +67,17 @@ public class UICharacterCreate : MonoBehaviour
             return;
         }
         UserService.Instance.SendCharacterCreate(this.charName.text, this.charClass);
-        if (selectCharacterIdx >= 0)
-        {
-            UserService.Instance.SendGameEnter(selectCharacterIdx);
-        }
+        //if (selectCharacterIdx >= 0)
+        //{
+        //    UserService.Instance.SendGameEnter(selectCharacterIdx);
+        //}
     }
 
     public void OnSelectClass(int charClass)
     {
         this.charClass = (CharacterClass)charClass;
+
+        OnSelectCharacter(charClass);
 
         characterView.CurrentCharacter = charClass - 1;
         showIcon();
@@ -92,7 +95,7 @@ public class UICharacterCreate : MonoBehaviour
     {
         if (result == Result.Success)
         {
-            //BackSelectPanel();
+            BackSelectPanel();
         }
         else
             MessageBox.Show(message, "´íÎó", MessageBoxType.Error);
@@ -101,10 +104,10 @@ public class UICharacterCreate : MonoBehaviour
     public void OnSelectCharacter(int idx)
     {
         this.selectCharacterIdx = idx;
-        var cha = User.Instance.Info.Player.Characters[idx];
-        Debug.LogFormat("Select Char:[{0}]{1}[{2}]", cha.Id, cha.Name, cha.Class);
-        User.Instance.CurrentCharacter = cha;
-        characterView.CurrentCharacter = idx;// ((int)cha.Class - 1);
+        //var cha = User.Instance.Info.Player.Characters[idx];
+        //Debug.LogFormat("Select Char:[{0}]{1}[{2}]", cha.Id, cha.Name, cha.Class);
+        //User.Instance.CurrentCharacter = cha;
+        //characterView.CurrentCharacter = idx;// ((int)cha.Class - 1);
 
         //for (int i = 0; i < User.Instance.Info.Player.Characters.Count; i++)
         //{

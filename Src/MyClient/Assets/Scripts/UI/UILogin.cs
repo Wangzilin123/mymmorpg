@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using SkillBridge.Message;
 using Services;
+using Models;
 
 public class UILogin : MonoBehaviour {
 
@@ -56,6 +57,7 @@ public class UILogin : MonoBehaviour {
     {
         if (result==Result.Success)
         {
+            Debug.Log("*************Num of User:"+User.Instance.Info.Player.Characters.Count);
             SceneManager.Instance.LoadScene("CharSelect");
         }
         else

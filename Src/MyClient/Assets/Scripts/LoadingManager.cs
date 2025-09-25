@@ -7,6 +7,7 @@ using Services;
 
 using SkillBridge.Message;
 using ProtoBuf;
+using Models;
 
 public class LoadingManager : MonoBehaviour {
 

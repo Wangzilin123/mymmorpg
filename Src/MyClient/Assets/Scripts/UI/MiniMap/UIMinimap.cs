@@ -1,4 +1,4 @@
-using Manager;
+using Managers;
 using Models;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,6 +31,8 @@ public class UIMinimap : MonoBehaviour
 
     void Update()
     {
+        if (minimapBoundingBox == null||playerTransform==null) return;
+
         if (playerTransform == null && User.Instance.CurrentCharacterObject != null)
         {
             this.playerTransform = User.Instance.CurrentCharacterObject.transform;
