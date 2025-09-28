@@ -4,6 +4,7 @@ using UnityEngine;
 
 using Entities;
 using SkillBridge.Message;
+using Services;
 
 public class PlayerInputController : MonoBehaviour
 {
@@ -27,23 +28,23 @@ public class PlayerInputController : MonoBehaviour
     {
 
         state = SkillBridge.Message.CharacterState.Idle;
-        if (this.character == null)
-        {
-            DataManager.Instance.Load();
-            NCharacterInfo cinfo = new NCharacterInfo();
-            cinfo.Id = 1;
-            cinfo.Name = "Test";
-            cinfo.Tid = 1;
-            cinfo.Entity = new NEntity();
-            cinfo.Entity.Position = new NVector3();
-            cinfo.Entity.Direction = new NVector3();
-            cinfo.Entity.Direction.X = 0;
-            cinfo.Entity.Direction.Y = 100;
-            cinfo.Entity.Direction.Z = 0;
-            this.character = new Character(cinfo);
+        //if (this.character == null)
+        //{
+        //    DataManager.Instance.Load();
+        //    NCharacterInfo cinfo = new NCharacterInfo();
+        //    cinfo.Id = 1;
+        //    cinfo.Name = "Test";
+        //    cinfo.Tid = 1;
+        //    cinfo.Entity = new NEntity();
+        //    cinfo.Entity.Position = new NVector3();
+        //    cinfo.Entity.Direction = new NVector3();
+        //    cinfo.Entity.Direction.X = 0;
+        //    cinfo.Entity.Direction.Y = 100;
+        //    cinfo.Entity.Direction.Z = 0;
+        //    this.character = new Character(cinfo);
 
-            if (entityController != null) entityController.entity = this.character;
-        }
+        //    if (entityController != null) entityController.entity = this.character;
+        //}
     }
 
     void FixedUpdate()
@@ -113,6 +114,8 @@ public class PlayerInputController : MonoBehaviour
     float lastSync = 0;
     private void LateUpdate()
     {
+        if (this.character == null) return;
+
         Vector3 offset = this.rb.transform.position - lastPos;
         this.speed = (int)(offset.magnitude * 100f / Time.deltaTime);
         this.lastPos = this.rb.transform.position;
@@ -130,6 +133,7 @@ public class PlayerInputController : MonoBehaviour
     {
         if (entityController != null)
             entityController.OnEntityEvent(entityEvent);
+        MapService.Instance.SendMapEntitySync(entityEvent,this.character.EntityData);
     }
 
 }

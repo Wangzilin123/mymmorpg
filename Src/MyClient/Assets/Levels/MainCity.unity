@@ -25238,6 +25238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7264d3d3da04d45930b68790a563d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  global: 1
 --- !u!1 &626835649
 GameObject:
   m_ObjectHideFlags: 0
@@ -41459,19 +41460,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1086274212}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1415483401}
-        m_TargetAssemblyTypeName: UIMainCity, Assembly-CSharp
-        m_MethodName: BackToCharSelect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1086274212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53575,6 +53564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatarName: {fileID: 1725283200}
   avatarLevel: {fileID: 1910064782}
+  backChaSelect: {fileID: 1086274211}
 --- !u!1001 &1421056535
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ namespace GameServer.Services
 
             MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<UserGameEnterRequest>(this.OnGameEnter);
 
-            //MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<UserGameLeaveRequest>(this.OnGameLeave);
+            MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<UserGameLeaveRequest>(this.OnGameLeave);
         }
 
 
@@ -112,11 +112,11 @@ namespace GameServer.Services
                 TID = (int)request.Class,
                 MapID = 1,
                 MapPosX = 5000,
-                MapPosY=4000,
-                MapPosZ=820
+                MapPosY = 4000,
+                MapPosZ = 820
             };
 
-            character=DBService.Instance.Entities.Characters.Add(character);
+            character = DBService.Instance.Entities.Characters.Add(character);
             sender.Session.User.Player.Characters.Add(character);
             DBService.Instance.Entities.SaveChanges();
 
@@ -170,7 +170,7 @@ namespace GameServer.Services
             message.Response = new NetMessageResponse();
             message.Response.gameLeave = new UserGameLeaveResponse();
             message.Response.gameLeave.Result = Result.Success;
-            sender.Session.Response.gameLeave.Errormsg = "None";
+            message.Response.gameLeave.Errormsg = "None";
 
             byte[] data=PackageHandler.PackMessage(message);
             sender.SendData(data,0,data.Length);

@@ -11,6 +11,7 @@ using Common.Data;
 using Network;
 using GameServer.Managers;
 using GameServer.Entities;
+using GameServer.Services;
 
 namespace GameServer.Models
 {
@@ -83,6 +84,7 @@ namespace GameServer.Models
             {
                 this.SendCharacterLeaveMap(kv.Value.connection,cha);
             }
+            this.MapCharacters.Remove(cha.Id);
         }
 
 
@@ -111,5 +113,21 @@ namespace GameServer.Models
             connection.SendData(data,0,data.Length);
         }
 
+        internal void UpdateEntity(NEntitySync entity)
+        {
+            foreach (var kv in this.MapCharacters)
+            {
+                if (kv.Value.character.entityId==entity.Id)
+                {
+                    kv.Value.character.Position = entity.Entity.Position;
+                    kv.Value.character.Direction = entity.Entity.Direction;
+                    kv.Value.character.Speed = entity.Entity.Speed;
+                }
+                else
+                {
+                    MapService.Instance.SendEntityUpdate(kv.Value.connection,entity);
+                }
+            }
+        }
     }
 }

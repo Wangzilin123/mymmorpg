@@ -7,11 +7,21 @@ public class UIMainCity : MonoBehaviour
     [SerializeField] private Text avatarName;
     [SerializeField] private Text avatarLevel;
 
+    [SerializeField] private Button backChaSelect;
+
     void Start()
     {
         this.UpdateAvatar();
     }
 
+    private void OnEnable()
+    {
+        backChaSelect.onClick.AddListener(BackToCharSelect);
+    }
+    private void OnDisable()
+    {
+        backChaSelect.onClick.RemoveListener(BackToCharSelect);
+    }
 
     void UpdateAvatar()
     {
