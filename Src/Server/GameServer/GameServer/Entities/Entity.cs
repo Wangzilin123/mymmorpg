@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common;
 
 namespace GameServer.Entities
 {
@@ -54,6 +55,7 @@ namespace GameServer.Entities
         {
             get
             {
+                //UpdateEntityData();
                 return entityData;
             }
             set

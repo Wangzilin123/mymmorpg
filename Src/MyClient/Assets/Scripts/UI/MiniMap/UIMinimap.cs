@@ -33,9 +33,13 @@ public class UIMinimap : MonoBehaviour
     {
         if (minimapBoundingBox == null||playerTransform==null) return;
 
-        if (playerTransform == null && User.Instance.CurrentCharacterObject != null)
+        //if (playerTransform == null && User.Instance.CurrentCharacterObject != null)
+        //{
+        //    this.playerTransform = User.Instance.CurrentCharacterObject.transform;
+        //}
+        if (playerTransform == null)
         {
-            this.playerTransform = User.Instance.CurrentCharacterObject.transform;
+            this.playerTransform = MinimapManager.Instance.PlayerTransform;
         }
 
         float realWidth = minimapBoundingBox.bounds.size.x;
