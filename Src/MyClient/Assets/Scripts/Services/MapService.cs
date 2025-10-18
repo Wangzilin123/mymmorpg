@@ -57,7 +57,6 @@ namespace Services
         private void OnMapCharacterLeave(object sender, MapCharacterLeaveResponse response)
         {
             Debug.LogFormat("OnMapCharacterLeave:CharID:{0}",response.characterId);
-            Debug.LogFormat("CurrentCharacter ID:{0}", User.Instance.CurrentCharacter.Id);
             if (response.characterId != User.Instance.CurrentCharacter.Id)
                 CharacterManager.Instance.RemoveCharacter(response.characterId);
             else
